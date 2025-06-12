@@ -30,6 +30,8 @@ func display_text(text_to_display: String):
 	global_position.x -= size.x / 2
 	global_position.y -= size.y + 24
 	text_label.text = ""
+	display_letter()  # Inicia a exibição da primeira letra
+
 func display_letter():
 	text_label.text += text[letter_index]
 	letter_index += 1
@@ -38,10 +40,13 @@ func display_letter():
 		text_display_finished.emit()
 		return
 		
-		match text[letter_index]:
+	match text[letter_index]:
 		"!", "?", ",", ".":
-			letter_time_display.start(punctuation_display_timer)
-		"":
-			letter_time_display.start(punctuation_display_timer)
+			timer.start(punctuation_display_timer)
+		" ":
+			timer.start(space_display_timer)
 		_:
-			letter_time_display.start(punctuation_display_timer)
+			timer.start(letter_display_timer)
+
+func _on_Timer_timeout():
+	display_letter()

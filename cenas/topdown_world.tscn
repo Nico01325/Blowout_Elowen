@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=4 uid="uid://pfxpdd8yx8se"]
+[gd_scene load_steps=84 format=4 uid="uid://pfxpdd8yx8se"]
 
 [ext_resource type="PackedScene" uid="uid://dydfqmojg1o6g" path="res://cenas/player.tscn" id="1_fm6av"]
 [ext_resource type="Texture2D" uid="uid://q0vyeof5lw86" path="res://Sprites/TX Tileset Stone Ground.png" id="2_1xs5c"]
@@ -1458,6 +1458,9 @@ sources/1 = SubResource("TileSetAtlasSource_fjcrk")
 sources/2 = SubResource("TileSetAtlasSource_i7k6t")
 sources/3 = SubResource("TileSetAtlasSource_jjlaw")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlpvw"]
+size = Vector2(26, 36)
+
 [node name="topdown-world" type="Node2D"]
 script = ExtResource("8_kfwlh")
 
@@ -1499,3 +1502,15 @@ next_level = "res://cenas/topdown_world2.tscn"
 position = Vector2(153.5, 196.584)
 
 [node name="menu_de_pausa" parent="." instance=ExtResource("9_vb7hn")]
+
+[node name="warning" type="Node2D" parent="."]
+position = Vector2(337, 205)
+
+[node name="textura" type="AnimatedSprite2D" parent="warning"]
+
+[node name="Area2D" type="Area2D" parent="warning"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="warning/Area2D"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_wlpvw")
