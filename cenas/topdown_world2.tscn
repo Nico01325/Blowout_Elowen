@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmwsjg4hqgfru"]
+
+[ext_resource type="Script" path="res://scripts/levels.gd" id="1_xsrt5"]
+[ext_resource type="Texture2D" uid="uid://co7u30afg4h44" path="res://Sprites/pixil-frame-0 (2).png" id="1_yx5m8"]
+[ext_resource type="PackedScene" uid="uid://d1vfqhg064tmp" path="res://porta.tscn" id="2_i304e"]
+[ext_resource type="PackedScene" uid="uid://dydfqmojg1o6g" path="res://cenas/player.tscn" id="3_k52e5"]
+[ext_resource type="PackedScene" uid="uid://cvdjp6eaxmqb8" path="res://cenas/menu_de_pausa.tscn" id="5_mykft"]
+
+[node name="topdown-world2" type="Node2D"]
+script = ExtResource("1_xsrt5")
+
+[node name="Pixil-frame-0(2)" type="Sprite2D" parent="."]
+position = Vector2(375, 434)
+scale = Vector2(18.9529, 15.8667)
+texture = ExtResource("1_yx5m8")
+
+[node name="porta" parent="." instance=ExtResource("2_i304e")]
+position = Vector2(-303, 777)
+scale = Vector2(2.54405, 2.43921)
+next_level = "res://cenas/topdown_world.tscn"
+
+[node name="topdown_world" type="Marker2D" parent="."]
+position = Vector2(358, 444)
+
+[node name="Player" parent="." instance=ExtResource("3_k52e5")]
+
+[node name="topdown_world2" type="Marker2D" parent="."]
+position = Vector2(-181.258, 790.84)
+
+[node name="menu_de_pausa" parent="." instance=ExtResource("5_mykft")]
+visible = false

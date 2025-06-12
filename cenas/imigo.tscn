@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfx08k0uwee1i"]
+
+[ext_resource type="Script" path="res://scripts/imigo.gd" id="1_syl2i"]
+[ext_resource type="Texture2D" uid="uid://d1ybrpgv51sn8" path="res://Sprites/icon.svg" id="2_cy88s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i1ns8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cy88s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1iggr"]
+size = Vector2(125, 123)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ve12t"]
+
+[node name="imigo" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_syl2i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_i1ns8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-2, 1)
+shape = SubResource("RectangleShape2D_1iggr")
+disabled = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+scale = Vector2(30.8726, 25.3186)
+shape = SubResource("CircleShape2D_ve12t")
+debug_color = Color(0.929063, 0.195616, 0.46019, 0.42)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_DetectionArea_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_DetectionArea_body_exited"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds3uvqnpshins"]
+
+[ext_resource type="Script" path="res://transição.gd" id="1_a1eqq"]
+
+[node name="transição" type="Node2D"]
+script = ExtResource("1_a1eqq")

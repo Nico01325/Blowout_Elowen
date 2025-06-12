@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4pkgwbw2rm"]
+
+[ext_resource type="Texture2D" uid="uid://4m0mrepiiyuj" path="res://Sprites/TX Tileset Grass.png" id="1_m6jrv"]
+[ext_resource type="Script" path="res://cenas/tela_de_titulo.gd" id="1_r4m1l"]
+[ext_resource type="Theme" uid="uid://jthb5hm14uct" path="res://scripts/cores.tres" id="2_3f2w7"]
+[ext_resource type="FontFile" uid="uid://b38e4hcb7673f" path="res://Sprites/young_morin/YoungMorin-Regular.ttf" id="4_movse"]
+
+[sub_resource type="Theme" id="Theme_25mmy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eqlge"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wn7jg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n7017"]
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+
+[node name="tela_de_titulo" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_25mmy")
+script = ExtResource("1_r4m1l")
+
+[node name="TextEdit" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 758.0
+texture = ExtResource("1_m6jrv")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TextEdit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 257.0
+offset_top = 153.0
+offset_right = -232.0
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="BoxContainer" type="HBoxContainer" parent="TextEdit/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextEdit/MarginContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Logo_do_joguin" type="TextureRect" parent="TextEdit/MarginContainer/BoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="começar" type="Button" parent="TextEdit/MarginContainer/BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_3f2w7")
+text = "Começar"
+
+[node name="HSeparator" type="HSeparator" parent="TextEdit/MarginContainer/BoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_eqlge")
+
+[node name="Creditos" type="Button" parent="TextEdit/MarginContainer/BoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_3f2w7")
+text = "Creditos
+"
+
+[node name="HSeparator2" type="HSeparator" parent="TextEdit/MarginContainer/BoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_wn7jg")
+
+[node name="sair" type="Button" parent="TextEdit/MarginContainer/BoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_3f2w7")
+text = " Sair
+"
+
+[node name="sprite_do_perso" type="TextureRect" parent="TextEdit/MarginContainer/BoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 86.0
+offset_right = 1156.0
+offset_bottom = 247.0
+theme_override_fonts/font = ExtResource("4_movse")
+theme_override_font_sizes/font_size = 75
+text = "  Blowout: Elowen"
+label_settings = SubResource("LabelSettings_n7017")
+
+[connection signal="pressed" from="TextEdit/MarginContainer/BoxContainer/VBoxContainer/começar" to="." method="_on_começar_pressed"]
+[connection signal="pressed" from="TextEdit/MarginContainer/BoxContainer/VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="TextEdit/MarginContainer/BoxContainer/VBoxContainer/sair" to="." method="_on_sair_pressed"]

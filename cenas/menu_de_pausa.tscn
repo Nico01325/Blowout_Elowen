@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvdjp6eaxmqb8"]
+
+[ext_resource type="Script" path="res://cenas/menu_de_pausa.gd" id="1_nyoq1"]
+[ext_resource type="Theme" uid="uid://jthb5hm14uct" path="res://scripts/cores.tres" id="1_wpmg6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2qnnt"]
+
+[node name="menu_de_pausa" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_nyoq1")
+
+[node name="fundo" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.411765)
+
+[node name="menu_pausa" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.5
+offset_top = -33.0
+offset_right = 46.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="voltar" type="Button" parent="menu_pausa"]
+layout_mode = 2
+theme = ExtResource("1_wpmg6")
+text = "Voltar
+"
+
+[node name="HSeparator" type="HSeparator" parent="menu_pausa"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2qnnt")
+
+[node name="sair" type="Button" parent="menu_pausa"]
+layout_mode = 2
+theme = ExtResource("1_wpmg6")
+text = "Sair do jogo"
+
+[connection signal="pressed" from="menu_pausa/voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="menu_pausa/sair" to="." method="_on_sair_pressed"]
