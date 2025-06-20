@@ -125,7 +125,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1mmk"]
-size = Vector2(23, 29)
+size = Vector2(16, 12.5)
 
 [sub_resource type="Animation" id="Animation_an4mp"]
 resource_name = "correndo"
@@ -148,7 +148,7 @@ autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-0.5, 2.5)
+position = Vector2(1, 9.25)
 shape = SubResource("RectangleShape2D_c1mmk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
