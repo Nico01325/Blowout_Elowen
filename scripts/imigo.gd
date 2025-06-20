@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var navigation_agent_2d = $NavigationAgent2D
 @onready var detection_area = $DetectionArea
 
-@export var Player: CharacterBody2D
+@export var Player: Player
 @export var Speed: float = 100
 
 var perseguindo := false
