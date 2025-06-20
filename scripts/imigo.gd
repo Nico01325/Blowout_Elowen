@@ -35,3 +35,4 @@ func _on_DetectionArea_body_exited(body):
 func _on_Area2D_body_entered(body):
 		if body.name == "Player":
 			get_tree().reload_current_scene()
+# Fiz comendo pão
