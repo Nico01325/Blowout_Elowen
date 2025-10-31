@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cni2xbdfdyeql"]
 
-[ext_resource type="Script" path="res://cenas/tela_de_creditos.gd" id="1_yn6n6"]
+[ext_resource type="Script" uid="uid://c4667iisan36i" path="res://cenas/tela_de_creditos.gd" id="1_yn6n6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myelk"]
 bg_color = Color(0, 0, 0, 1)

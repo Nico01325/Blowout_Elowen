@@ -2,13 +2,13 @@ extends Area2D
 
 @onready var textura: Sprite2D = $textura
 
-const lines: Array[String] = [
-	"oi caba",
-	"asdsadsadsa",
-	"asdadsa",
-	"asdasdsadsads"
-]
-
+#const lines: Array[String] = [
+	#"oi caba",
+	#"asdsadsadsa",
+	#"asdadsa",
+	#"asdasdsadsads"
+#]
+@export var lines: Array[String]
 var player_inside := false
 
 func _ready():

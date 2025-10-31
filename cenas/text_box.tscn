@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkqnjcb1qs4l7"]
 
-[ext_resource type="Script" path="res://cenas/text_box.gd" id="1_eqnaj"]
+[ext_resource type="Script" uid="uid://cn357uuv477j5" path="res://cenas/text_box.gd" id="1_eqnaj"]
 [ext_resource type="FontFile" uid="uid://ds3x47welxckx" path="res://Sprites/Bethany Elingston.otf" id="2_euo7o"]
 [ext_resource type="Texture2D" uid="uid://cf627svve51h1" path="res://Sprites/pixil-frame-0 (18).png" id="2_nqnbq"]
 
 [node name="MarginContainer" type="MarginContainer"]
+z_index = 4096
 offset_left = 1.0
 offset_right = 378.0
 offset_bottom = 249.0
@@ -28,10 +29,11 @@ theme_override_colors/font_color = Color(0.924948, 0.882757, 0.982962, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_euo7o")
 theme_override_font_sizes/font_size = 25
+text = "dasdsasaad"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
-one_shot = true
+autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

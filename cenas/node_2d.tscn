@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://co8sdcq5ep4i"]
 
-[ext_resource type="Script" path="res://scripts/personagem.gd" id="1_gi41v"]
+[ext_resource type="Script" uid="uid://hsoe2annpfg1" path="res://scripts/personagem.gd" id="1_gi41v"]
 
 [node name="Node2D" type="Node2D"]
 

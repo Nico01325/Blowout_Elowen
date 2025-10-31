@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c4pkgwbw2rm"]
 
 [ext_resource type="Texture2D" uid="uid://4m0mrepiiyuj" path="res://Sprites/TX Tileset Grass.png" id="1_m6jrv"]
-[ext_resource type="Script" path="res://cenas/tela_de_titulo.gd" id="1_r4m1l"]
+[ext_resource type="Script" uid="uid://bbvqtf4b5qkvw" path="res://cenas/tela_de_titulo.gd" id="1_r4m1l"]
 [ext_resource type="Theme" uid="uid://jthb5hm14uct" path="res://scripts/cores.tres" id="2_3f2w7"]
 [ext_resource type="FontFile" uid="uid://b38e4hcb7673f" path="res://Sprites/young_morin/YoungMorin-Regular.ttf" id="4_movse"]
 
