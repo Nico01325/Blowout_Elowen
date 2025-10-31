@@ -1621,7 +1621,7 @@ visible = false
 [node name="warning" type="Area2D" parent="."]
 position = Vector2(337, 205)
 script = ExtResource("10_o5aam")
-lines = Array[String](["Olá jogador.                ", "use as setinhas para se mover.           ", "encontre os 2 pedaços da chave.          "])
+lines = Array[String](["Olá jogador.", "use as setinhas para se mover.", "encontre os 2 pedaços da chave.          "])
 
 [node name="textura" type="Sprite2D" parent="warning"]
 texture = ExtResource("10_ex22l")
