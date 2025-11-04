@@ -24,7 +24,7 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body.name == "Player":
 		player_inside = false
-		textura.hide()
+		#textura.hide()#
 		if DialogosScript.is_message_active:
 			DialogosScript.force_close()
 
