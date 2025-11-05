@@ -10,7 +10,7 @@ var perseguindo := false
 
 func _physics_process(delta):
 	if perseguindo:
-		var direction = (navigation_agent_2d.get_next_path_position() - global_position).normalized()
+		var direction = Vector2(Player.global_position.x-self.global_position.x, Player.global_position.y-self.global_position.y).normalized()
 		velocity = direction * Speed
 	else:
 		velocity = Vector2.ZERO
