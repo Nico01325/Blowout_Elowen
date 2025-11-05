@@ -1,34 +1,34 @@
-[gd_scene load_steps=9 format=3 uid="uid://6w35fe7xfwhq"]
+[gd_scene load_steps=9 format=3 uid="uid://btq6s111a1hf5"]
 
-[ext_resource type="Script" uid="uid://d4nhs5jmdhcth" path="res://scripts/porta_dream_world.gd" id="1_807i2"]
-[ext_resource type="Texture2D" uid="uid://b0nyjf6vbtit1" path="res://Sprites/world/Portal-0.png" id="2_l6ul6"]
-[ext_resource type="Texture2D" uid="uid://2bs53pop28g4" path="res://Sprites/world/Portal-1.png" id="3_2dpsm"]
-[ext_resource type="Texture2D" uid="uid://detk8ls7g8wex" path="res://Sprites/world/Portal-2.png" id="4_j8oki"]
-[ext_resource type="Texture2D" uid="uid://blei6hgoy2wfq" path="res://Sprites/world/porta-3(4).png" id="5_807i2"]
+[ext_resource type="Script" uid="uid://bwmvc65xfehjk" path="res://scripts/porta.gd" id="1_7esio"]
+[ext_resource type="Texture2D" uid="uid://b0nyjf6vbtit1" path="res://Sprites/world/Portal-0.png" id="2_cnamu"]
+[ext_resource type="Texture2D" uid="uid://2bs53pop28g4" path="res://Sprites/world/Portal-1.png" id="3_bipa5"]
+[ext_resource type="Texture2D" uid="uid://detk8ls7g8wex" path="res://Sprites/world/Portal-2.png" id="4_0yb16"]
+[ext_resource type="Texture2D" uid="uid://blei6hgoy2wfq" path="res://Sprites/world/porta-3(4).png" id="5_biyym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lhxfd"]
 size = Vector2(125, 128.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_807i2"]
-atlas = ExtResource("2_l6ul6")
+atlas = ExtResource("2_cnamu")
 region = Rect2(0, 0, 168, 168)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_051tp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_l6ul6")
+"texture": ExtResource("2_cnamu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_2dpsm")
+"texture": ExtResource("3_bipa5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_j8oki")
+"texture": ExtResource("4_0yb16")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_807i2")
+"texture": ExtResource("5_biyym")
 }],
-"loop": true,
+"loop": false,
 "name": &"porta_abrindo",
 "speed": 2.0
 }, {
@@ -42,7 +42,7 @@ animations = [{
 }]
 
 [node name="porta" type="Area2D"]
-script = ExtResource("1_807i2")
+script = ExtResource("1_7esio")
 
 [node name="colisão" type="CollisionShape2D" parent="."]
 position = Vector2(222, 122)
@@ -54,6 +54,5 @@ scale = Vector2(0.99398804, 0.99333334)
 sprite_frames = SubResource("SpriteFrames_051tp")
 animation = &"porta_abrindo"
 autoplay = "porta_normal"
-frame_progress = 0.6268202
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

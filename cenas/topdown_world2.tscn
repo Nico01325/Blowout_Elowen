@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bhtngh1c4xu06" path="res://scripts/levels.gd" id="1_xsrt5"]
 [ext_resource type="Texture2D" uid="uid://b0yrtros8656h" path="res://pixil-frame-0_8.png" id="2_7m4wl"]
 [ext_resource type="Texture2D" uid="uid://q0vyeof5lw86" path="res://Sprites/TX Tileset Stone Ground.png" id="2_m6x6r"]
-[ext_resource type="PackedScene" uid="uid://dbjn73cir6ls2" path="res://porta_OverWorld.tscn" id="2_umbs0"]
 [ext_resource type="Texture2D" uid="uid://cqvmt5mg4yik3" path="res://Sprites/TX Tileset Wall.png" id="3_crno3"]
 [ext_resource type="PackedScene" uid="uid://dydfqmojg1o6g" path="res://cenas/player.tscn" id="3_k52e5"]
 [ext_resource type="Texture2D" uid="uid://bpsqr87e2hjqt" path="res://pixil-frame-0 (14).png" id="4_g8jlo"]
@@ -14,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://mah448a8153i" path="res://pixil-frame-0 (6).png" id="8_ld27o"]
 [ext_resource type="PackedScene" uid="uid://bfx08k0uwee1i" path="res://cenas/Inimigo.tscn" id="12_bxhjj"]
 [ext_resource type="Script" uid="uid://ko2sxtcm4q10" path="res://scripts/timer/timer.gd" id="13_umbs0"]
+[ext_resource type="PackedScene" uid="uid://6w35fe7xfwhq" path="res://porta_DreamWorld.tscn" id="14_7m4wl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d38iw"]
 texture = ExtResource("2_7m4wl")
@@ -4897,10 +4897,10 @@ position = Vector2(-79, 264)
 [node name="Timer" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -197.0
-offset_top = 454.0
-offset_right = -197.0
-offset_bottom = 454.0
+offset_left = -69.0
+offset_top = 387.0
+offset_right = -69.0
+offset_bottom = 387.0
 script = ExtResource("13_umbs0")
 
 [node name="Timer" type="Timer" parent="Timer"]
@@ -4912,5 +4912,5 @@ offset_top = -83.0
 offset_right = 436.0
 offset_bottom = -60.0
 
-[node name="porta" parent="." instance=ExtResource("2_umbs0")]
-position = Vector2(-290, 343)
+[node name="porta" parent="." instance=ExtResource("14_7m4wl")]
+position = Vector2(129, 285)

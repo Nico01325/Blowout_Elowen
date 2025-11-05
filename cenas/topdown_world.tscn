@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://hxxq6d63tx6x" path="res://Sprites/images (1).png" id="10_ex22l"]
 [ext_resource type="Script" uid="uid://co2lixd7e3pwb" path="res://cenas/warning.gd" id="10_o5aam"]
 [ext_resource type="PackedScene" uid="uid://bvx7k6bmp53tg" path="res://cenas/item.tscn" id="15_opmtv"]
-[ext_resource type="PackedScene" uid="uid://dbjn73cir6ls2" path="res://porta_OverWorld.tscn" id="15_wqc1a"]
+[ext_resource type="PackedScene" uid="uid://btq6s111a1hf5" path="res://porta_mundo1.tscn" id="15_wqc1a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gkvvf"]
 texture = ExtResource("2_1xs5c")
@@ -1636,11 +1636,11 @@ position = Vector2(392, 413.00003)
 scale = Vector2(0.32128578, 0.29715395)
 
 [node name="item2" parent="." instance=ExtResource("15_opmtv")]
-position = Vector2(386, 314.00003)
+position = Vector2(403.99997, 306.00003)
 scale = Vector2(0.32128578, 0.29715395)
 
 [node name="porta" parent="." instance=ExtResource("15_wqc1a")]
-position = Vector2(41, 168)
+position = Vector2(76, 162)
 
 [connection signal="body_entered" from="warning" to="warning" method="_on_body_entered"]
 [connection signal="body_exited" from="warning" to="warning" method="_on_body_exited"]

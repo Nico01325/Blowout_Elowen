@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dydfqmojg1o6g"]
+[gd_scene load_steps=21 format=3 uid="uid://dydfqmojg1o6g"]
 
 [ext_resource type="Script" uid="uid://hsoe2annpfg1" path="res://scripts/personagem.gd" id="1_nc6l2"]
 [ext_resource type="Texture2D" uid="uid://8ofs04eaaadg" path="res://Sprites/Girl_Sheet.png" id="3_g4338"]
@@ -135,8 +135,6 @@ _data = {
 &"correndo": SubResource("Animation_an4mp")
 }
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_3vyci"]
-
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_nc6l2")
 
@@ -158,6 +156,3 @@ zoom = Vector2(2, 2)
 libraries = {
 &"": SubResource("AnimationLibrary_lpsa5")
 }
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_3vyci")
