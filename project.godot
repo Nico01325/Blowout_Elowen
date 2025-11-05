@@ -12,7 +12,7 @@ config_version=5
 
 config/name="projeto de jogo 2A tarde (sonhos)"
 run/main_scene="res://cenas/tela_de_titulo.tscn"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://Sprites/icon.svg"
 
 [autoload]

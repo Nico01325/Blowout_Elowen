@@ -4861,9 +4861,10 @@ size = Vector2(1442, 44)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eixj5"]
 size = Vector2(27, 752)
 
-[node name="topdown-world2" type="Node2D"]
+[node name="topdown-world2" type="Node2D" node_paths=PackedStringArray("player")]
 position = Vector2(145, 57)
 script = ExtResource("1_xsrt5")
+player = NodePath("Player")
 
 [node name="chao" type="TileMapLayer" parent="."]
 modulate = Color(0.395144, 0.395111, 0.413558, 1)
@@ -4929,7 +4930,7 @@ offset_bottom = -60.0
 position = Vector2(129, 285)
 
 [node name="spawner_de_inimigo" type="Timer" parent="."]
-wait_time = 13.0
+wait_time = 12.0
 autostart = true
 
 [node name="CollisionShape2D" type="StaticBody2D" parent="."]

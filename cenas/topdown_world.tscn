@@ -1565,8 +1565,9 @@ sources/9 = SubResource("TileSetAtlasSource_h8eh7")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlpvw"]
 size = Vector2(73, 53)
 
-[node name="topdown-world" type="Node2D"]
+[node name="topdown-world" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("8_kfwlh")
+player = NodePath("Node2D/imigo")
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(-359, 350)
