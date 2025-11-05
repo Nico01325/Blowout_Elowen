@@ -49,8 +49,8 @@ position = Vector2(222, 122)
 shape = SubResource("RectangleShape2D_lhxfd")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(224, 121.00001)
-scale = Vector2(0.99398804, 0.99333334)
+position = Vector2(224, 121)
+scale = Vector2(0.993988, 0.993333)
 sprite_frames = SubResource("SpriteFrames_051tp")
 animation = &"porta_abrindo"
 autoplay = "porta_normal"

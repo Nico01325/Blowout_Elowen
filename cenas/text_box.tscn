@@ -14,7 +14,7 @@ script = ExtResource("1_eqnaj")
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
 texture = ExtResource("2_rr0en")
-region_rect = Rect2(135.03476, 40.04384, 116.71443, 36.80185)
+region_rect = Rect2(135.035, 40.0438, 116.714, 36.8018)
 
 [node name="label_margin" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -29,7 +29,9 @@ theme_override_colors/font_color = Color(0.924948, 0.882757, 0.982962, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_euo7o")
 theme_override_font_sizes/font_size = 25
-text = "dasdsasaad"
+text = "dasdsasaad          
+
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 

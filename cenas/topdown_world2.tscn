@@ -4891,8 +4891,9 @@ position = Vector2(-231, 766)
 [node name="menu_de_pausa" parent="." instance=ExtResource("5_mykft")]
 visible = false
 
-[node name="imigo" parent="." instance=ExtResource("12_bxhjj")]
-position = Vector2(-79, 264)
+[node name="imigo" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("12_bxhjj")]
+position = Vector2(204, 430)
+Player = NodePath("../Player")
 
 [node name="Timer" type="Control" parent="."]
 layout_mode = 3

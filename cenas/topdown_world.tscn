@@ -1621,7 +1621,7 @@ script = ExtResource("10_o5aam")
 lines = Array[String](["Olá jogador.", "use as setinhas para se mover.", "encontre os 2 pedaços da chave.          "])
 
 [node name="textura" type="Sprite2D" parent="warning"]
-position = Vector2(1, 4)
+position = Vector2(13, -32)
 texture = ExtResource("10_ex22l")
 region_enabled = true
 region_rect = Rect2(20, 68.5, 70, 53)
@@ -1632,12 +1632,12 @@ position = Vector2(3.5, 0.5)
 shape = SubResource("RectangleShape2D_wlpvw")
 
 [node name="item" parent="." instance=ExtResource("15_opmtv")]
-position = Vector2(392, 413.00003)
-scale = Vector2(0.32128578, 0.29715395)
+position = Vector2(392, 413)
+scale = Vector2(0.321286, 0.297154)
 
 [node name="item2" parent="." instance=ExtResource("15_opmtv")]
-position = Vector2(403.99997, 306.00003)
-scale = Vector2(0.32128578, 0.29715395)
+position = Vector2(372, 89)
+scale = Vector2(0.321286, 0.297154)
 
 [node name="porta" parent="." instance=ExtResource("15_wqc1a")]
 position = Vector2(76, 162)
