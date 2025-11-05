@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://dmwsjg4hqgfru"]
+[gd_scene load_steps=48 format=4 uid="uid://dmwsjg4hqgfru"]
 
 [ext_resource type="Script" uid="uid://bhtngh1c4xu06" path="res://scripts/levels.gd" id="1_xsrt5"]
 [ext_resource type="Texture2D" uid="uid://b0yrtros8656h" path="res://pixil-frame-0_8.png" id="2_7m4wl"]
@@ -1757,6 +1757,7 @@ texture = ExtResource("8_ld27o")
 
 [sub_resource type="TileSet" id="TileSet_3ebr6"]
 physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 1
 navigation_layer_0/layers = 1
 sources/1 = SubResource("TileSetAtlasSource_0whpn")
 sources/2 = SubResource("TileSetAtlasSource_xubrp")
@@ -3308,12 +3309,6 @@ sources/7 = SubResource("TileSetAtlasSource_m383n")
 sources/8 = SubResource("TileSetAtlasSource_b74r4")
 sources/9 = SubResource("TileSetAtlasSource_1tyuc")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7m4wl"]
-size = Vector2(1810, 47)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d38iw"]
-size = Vector2(20, 814)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gueor"]
 texture = ExtResource("2_m6x6r")
 0:0/0 = 0
@@ -4854,6 +4849,18 @@ sources/7 = SubResource("TileSetAtlasSource_a17iv")
 sources/8 = SubResource("TileSetAtlasSource_7vf5a")
 sources/9 = SubResource("TileSetAtlasSource_ps5si")
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7m4wl"]
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d38iw"]
+size = Vector2(1426, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpeq8"]
+size = Vector2(1442, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eixj5"]
+size = Vector2(27, 752)
+
 [node name="topdown-world2" type="Node2D"]
 position = Vector2(145, 57)
 script = ExtResource("1_xsrt5")
@@ -4884,18 +4891,6 @@ collision_visibility_mode = 2
 [node name="Player" parent="." instance=ExtResource("3_k52e5")]
 position = Vector2(-308, 427)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
-position = Vector2(621, 295)
-shape = SubResource("RectangleShape2D_7m4wl")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Player"]
-position = Vector2(733, -481)
-shape = SubResource("RectangleShape2D_7m4wl")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Player"]
-position = Vector2(-185, -80)
-shape = SubResource("RectangleShape2D_d38iw")
-
 [node name="arvores_Folhas" type="TileMapLayer" parent="."]
 modulate = Color(0.43134, 0.43134, 0.43134, 1)
 position = Vector2(0, 473)
@@ -4909,9 +4904,8 @@ position = Vector2(-231, 766)
 [node name="menu_de_pausa" parent="." instance=ExtResource("5_mykft")]
 visible = false
 
-[node name="imigo" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("12_bxhjj")]
+[node name="imigo" parent="." instance=ExtResource("12_bxhjj")]
 position = Vector2(205, 430)
-Player = NodePath("../Player")
 
 [node name="Timer" type="Control" parent="."]
 layout_mode = 3
@@ -4935,6 +4929,29 @@ offset_bottom = -60.0
 position = Vector2(129, 285)
 
 [node name="spawner_de_inimigo" type="Timer" parent="."]
+wait_time = 13.0
 autostart = true
+
+[node name="CollisionShape2D" type="StaticBody2D" parent="."]
+position = Vector2(313, 722)
+physics_material_override = SubResource("PhysicsMaterial_7m4wl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D"]
+position = Vector2(-9, -7.5)
+shape = SubResource("RectangleShape2D_d38iw")
+
+[node name="CollisionShape2D2" type="StaticBody2D" parent="."]
+position = Vector2(425, -54)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D2"]
+position = Vector2(-141, 12)
+shape = SubResource("RectangleShape2D_gpeq8")
+
+[node name="CollisionShape2D3" type="StaticBody2D" parent="."]
+position = Vector2(-493, 347)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D3"]
+position = Vector2(69.5, 11)
+shape = SubResource("RectangleShape2D_eixj5")
 
 [connection signal="timeout" from="spawner_de_inimigo" to="." method="_on_spawner_de_inimigo_timeout"]

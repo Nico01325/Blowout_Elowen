@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4pkgwbw2rm"]
+[gd_scene load_steps=10 format=3 uid="uid://c4pkgwbw2rm"]
 
-[ext_resource type="Texture2D" uid="uid://4m0mrepiiyuj" path="res://Sprites/TX Tileset Grass.png" id="1_m6jrv"]
 [ext_resource type="Script" uid="uid://bbvqtf4b5qkvw" path="res://cenas/tela_de_titulo.gd" id="1_r4m1l"]
 [ext_resource type="Theme" uid="uid://jthb5hm14uct" path="res://scripts/cores.tres" id="2_3f2w7"]
+[ext_resource type="Texture2D" uid="uid://bmwm7gy33lokv" path="res://backsembotao.png" id="2_u0wdg"]
 [ext_resource type="FontFile" uid="uid://b38e4hcb7673f" path="res://Sprites/young_morin/YoungMorin-Regular.ttf" id="4_movse"]
 
 [sub_resource type="Theme" id="Theme_25mmy"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j8xti"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eqlge"]
 
@@ -30,7 +32,7 @@ script = ExtResource("1_r4m1l")
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 758.0
-texture = ExtResource("1_m6jrv")
+texture = ExtResource("2_u0wdg")
 expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TextEdit"]
@@ -64,6 +66,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_3f2w7")
 text = "Começar"
+icon = SubResource("CanvasTexture_j8xti")
 
 [node name="HSeparator" type="HSeparator" parent="TextEdit/MarginContainer/BoxContainer/VBoxContainer"]
 layout_mode = 2
