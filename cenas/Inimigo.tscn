@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bfx08k0uwee1i"]
 
-[ext_resource type="Script" uid="uid://cvdcl1l15okog" path="res://scripts/imigo.gd" id="1_syl2i"]
+[ext_resource type="Script" uid="uid://cvdcl1l15okog" path="res://scripts/inimigo.gd" id="1_syl2i"]
 [ext_resource type="Texture2D" uid="uid://d1ybrpgv51sn8" path="res://Sprites/icon.svg" id="2_cy88s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i1ns8"]
@@ -19,7 +19,7 @@ size = Vector2(125, 123)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ve12t"]
 
-[node name="imigo" type="CharacterBody2D"]
+[node name="Inimigo" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_syl2i")
 

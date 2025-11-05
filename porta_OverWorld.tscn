@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbjn73cir6ls2"]
+
+[ext_resource type="Script" uid="uid://bwmvc65xfehjk" path="res://scripts/porta.gd" id="1_f1qd6"]
+[ext_resource type="Texture2D" uid="uid://b0nyjf6vbtit1" path="res://Sprites/world/Portal-0.png" id="2_oxel5"]
+[ext_resource type="Texture2D" uid="uid://2bs53pop28g4" path="res://Sprites/world/Portal-1.png" id="3_i0x5w"]
+[ext_resource type="Texture2D" uid="uid://detk8ls7g8wex" path="res://Sprites/world/Portal-2.png" id="4_0qaoi"]
+[ext_resource type="Texture2D" path="res://Sprites/world/Portal-3.png" id="5_3kuqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhxfd"]
+size = Vector2(125, 128.5)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_hfcgx"]
+frames = 4
+pause = true
+one_shot = true
+frame_0/texture = ExtResource("2_oxel5")
+frame_1/texture = ExtResource("3_i0x5w")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("4_0qaoi")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("5_3kuqy")
+frame_3/duration = 1.0
+
+[node name="porta" type="Area2D"]
+script = ExtResource("1_f1qd6")
+
+[node name="colisão" type="CollisionShape2D" parent="."]
+position = Vector2(215, 122)
+shape = SubResource("RectangleShape2D_lhxfd")
+
+[node name="AnimatedSprite2d" type="Sprite2D" parent="."]
+position = Vector2(225, 128)
+texture = SubResource("AnimatedTexture_hfcgx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

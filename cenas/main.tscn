@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dx5lunq64pxtj"]
+[gd_scene load_steps=4 format=3 uid="uid://dx5lunq64pxtj"]
 
 [ext_resource type="Script" uid="uid://8lgj5ipwvs57" path="res://cenas/spawner.gd" id="1_4fhxt"]
-[ext_resource type="PackedScene" uid="uid://d1vfqhg064tmp" path="res://porta.tscn" id="1_t4ukd"]
 [ext_resource type="PackedScene" uid="uid://dydfqmojg1o6g" path="res://cenas/player.tscn" id="2_4fhxt"]
 [ext_resource type="PackedScene" uid="uid://bvx7k6bmp53tg" path="res://cenas/item.tscn" id="2_b30p5"]
 
@@ -11,7 +10,17 @@
 script = ExtResource("1_4fhxt")
 item_scene = ExtResource("2_b30p5")
 
-[node name="porta" parent="." instance=ExtResource("1_t4ukd")]
+[node name="porta" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
 [node name="Player" parent="." instance=ExtResource("2_4fhxt")]
 position = Vector2(-2, -1)

@@ -1,11 +1,10 @@
-[gd_scene load_steps=26 format=4 uid="uid://pfxpdd8yx8se"]
+[gd_scene load_steps=27 format=4 uid="uid://pfxpdd8yx8se"]
 
 [ext_resource type="PackedScene" uid="uid://dydfqmojg1o6g" path="res://cenas/player.tscn" id="1_fm6av"]
 [ext_resource type="Texture2D" uid="uid://q0vyeof5lw86" path="res://Sprites/TX Tileset Stone Ground.png" id="2_1xs5c"]
 [ext_resource type="Texture2D" uid="uid://cqvmt5mg4yik3" path="res://Sprites/TX Tileset Wall.png" id="3_u21ud"]
-[ext_resource type="PackedScene" uid="uid://bfx08k0uwee1i" path="res://cenas/imigo.tscn" id="3_ynej1"]
+[ext_resource type="PackedScene" uid="uid://bfx08k0uwee1i" path="res://cenas/Inimigo.tscn" id="3_ynej1"]
 [ext_resource type="Texture2D" uid="uid://bpsqr87e2hjqt" path="res://pixil-frame-0 (14).png" id="6_isclp"]
-[ext_resource type="PackedScene" uid="uid://d1vfqhg064tmp" path="res://porta.tscn" id="7_2mkdq"]
 [ext_resource type="Texture2D" uid="uid://b6s8ynr0dqn3w" path="res://Captura de tela 2025-05-28 144639.png" id="7_h11hi"]
 [ext_resource type="Texture2D" uid="uid://ufs44ij2m2lc" path="res://pixil-frame-0 (13).png" id="7_kgwf2"]
 [ext_resource type="Texture2D" uid="uid://lw5dmvq5vf0j" path="res://grama.png" id="8_2hkv2"]
@@ -14,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://cvdjp6eaxmqb8" path="res://cenas/menu_de_pausa.tscn" id="9_vb7hn"]
 [ext_resource type="Texture2D" uid="uid://hxxq6d63tx6x" path="res://Sprites/images (1).png" id="10_ex22l"]
 [ext_resource type="Script" uid="uid://co2lixd7e3pwb" path="res://cenas/warning.gd" id="10_o5aam"]
+[ext_resource type="PackedScene" uid="uid://bvx7k6bmp53tg" path="res://cenas/item.tscn" id="15_opmtv"]
+[ext_resource type="PackedScene" uid="uid://dbjn73cir6ls2" path="res://porta_OverWorld.tscn" id="15_wqc1a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gkvvf"]
 texture = ExtResource("2_1xs5c")
@@ -1603,12 +1604,8 @@ tile_set = SubResource("TileSet_of8h8")
 collision_visibility_mode = 2
 
 [node name="topdown_worl2" type="Marker2D" parent="."]
-position = Vector2(103, 279)
+position = Vector2(105, 281)
 script = ExtResource("8_kfwlh")
-
-[node name="porta" parent="." instance=ExtResource("7_2mkdq")]
-position = Vector2(807, 284)
-next_level = "res://cenas/topdown_world2.tscn"
 
 [node name="topdown_world2" type="Marker2D" parent="."]
 position = Vector2(153.5, 196.584)
@@ -1633,6 +1630,17 @@ region_rect = Rect2(20, 68.5, 70, 53)
 visible = false
 position = Vector2(3.5, 0.5)
 shape = SubResource("RectangleShape2D_wlpvw")
+
+[node name="item" parent="." instance=ExtResource("15_opmtv")]
+position = Vector2(392, 413.00003)
+scale = Vector2(0.32128578, 0.29715395)
+
+[node name="item2" parent="." instance=ExtResource("15_opmtv")]
+position = Vector2(386, 314.00003)
+scale = Vector2(0.32128578, 0.29715395)
+
+[node name="porta" parent="." instance=ExtResource("15_wqc1a")]
+position = Vector2(41, 168)
 
 [connection signal="body_entered" from="warning" to="warning" method="_on_body_entered"]
 [connection signal="body_exited" from="warning" to="warning" method="_on_body_exited"]

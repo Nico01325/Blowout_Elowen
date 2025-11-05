@@ -1,14 +1,9 @@
+# npc_dialogo.gd (attached to Area2D)
 extends Area2D
 
 @onready var textura: Sprite2D = $textura
-
-#const lines: Array[String] = [
-	#"oi caba",
-	#"asdsadsadsa",
-	#"asdadsa",
-	#"asdasdsadsads"
-#]
 @export var lines: Array[String]
+
 var player_inside := false
 
 func _ready():
@@ -16,23 +11,21 @@ func _ready():
 	connect("body_exited", _on_body_exited)
 
 func _on_body_entered(body):
-	if body.name == "Player":  # ou verifique por grupo, tipo body.is_in_group("jogador")
+	if body.name == "Player":
 		player_inside = true
-		if not DialogosScript.is_message_active:
-			textura.show()
+		_update_texture_visibility()
 
 func _on_body_exited(body):
 	if body.name == "Player":
 		player_inside = false
-		#textura.hide()#
-		if DialogosScript.is_message_active:
-			DialogosScript.force_close()
+		_update_texture_visibility()
 
 func _unhandled_input(event):
-	if player_inside:
-		if event.is_action_pressed("interagir"):
-			if DialogosScript.is_message_active:
-				DialogosScript.force_close()
-			else:
-				textura.hide()
-				DialogosScript.start_message(global_position, lines)
+	# Só inicia o diálogo se o jogador estiver dentro e NÃO houver diálogo ativo
+	if player_inside and event.is_action_pressed("interagir"):
+		if not DialogosScript.is_message_active:
+			DialogosScript.start_message(global_position + Vector2(0, -30), lines)
+			_update_texture_visibility()
+
+func _update_texture_visibility():
+	textura.visible = player_inside and not DialogosScript.is_message_active
